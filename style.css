@@ -1,97 +1,158 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
+  
 }
 
 i,
 svg {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .kick-pad,
 .snare-pad,
-.hithat-pad {
-    height: 5rem;
-    width: 5rem;
-    margin: 1rem;
-    cursor: pointer;
+.hihat-pad {
+  height: 5rem;
+  width: 5rem;
+  margin: 1rem;
+  cursor: pointer;
 }
 
 .kick-pad {
-    background: rgba(115, 181, 231, 0.904);
+  background: rgba(115, 181, 231, 0.904);
 }
 .snare-pad {
-    background: rgba(213, 130, 221, 0.918);
+  background: rgba(213, 130, 221, 0.918);
 }
-.hithat-pad {
-    background: rgba(233, 180, 131, 0.924);
+.hihat-pad {
+  background: rgba(233, 180, 131, 0.924);
 }
 .kick-pad.active {
-    background: rgba(30, 139, 223, 0.904);
+  background: rgba(30, 139, 223, 0.904);
 }
 .snare-pad.active {
-    background: rgba(203, 40, 218, 0.918);
+  background: rgba(203, 40, 218, 0.918);
 }
-.hithat-pad.active {
-    background: rgba(214, 122, 35, 0.924);
+.hihat-pad.active {
+  background: rgba(214, 122, 35, 0.924);
 }
 
 .sequencer {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .kick-track,
 .snare-track,
-.hithat-track {
-    display: flex;
-    align-items: center;
-    width: 70%;
-    justify-content: space-between;
-    margin-top: 5rem;
+.hihat-track {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 5rem;
 }
 
 .kick,
 .snare,
-.hithat {
-    display: flex;
+.hihat {
+  display: flex;
 }
 
 .controls {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0rem 2rem;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0rem 2rem;
 }
- 
+
 .controls button {
-    padding: 1rem;
-    border: none;
-    background: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.5s ease;
+  padding: 1rem;
+  border: none;
+  background: rgb(87, 87, 87);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  margin: 2rem;
+  color: white;
+}
+.controls select {
+  padding: 1rem;
+  margin: 0 1rem;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.controls select:hover {
+  background: rgb(51, 128, 108);
+  color: aliceblue;
+}
+
+.controls h1 {
+  font-size: 3rem;
 }
 
 .pad {
-    transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .play {
-    padding: 2rem;
-    border: 2rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    background: gray;
-    border-radius: 0.4rem;
-    cursor: pointer;
+  padding: 2rem;
+  border: 2rem;
+  font-weight: 900;
+  font-size: 2rem;
+  margin-top: 4rem;
+  background: gray;
+  color: white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.play:hover {
+  margin-top: 4rem;
+  background: rgb(51, 128, 108);
+  color: white;
+  font-size: 2rem;
+}
+.mute.active {
+  background: rgb(128, 128, 128);
+}
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+.tempo-slider {
+  padding: 1rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background: rgb(88, 88, 88);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.tempo p {
+  font-size: 3rem;
+  margin: 2rem;
+  text-align: center;
+}
+.tempo-slider:hover {
+  background-color:  rgb(51, 128, 108);
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
 }
